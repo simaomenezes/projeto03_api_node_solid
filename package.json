@@ -1,0 +1,31 @@
+{
+  "name": "projeto03_api_node_solid",
+  "version": "1.0.0",
+  "description": "Nesse projeto será desenvolvido uma aplicação para check-ins em academias. Aqui você irá aprender sobre alguns conceitos do SOLID, Design Patterns, Docker para iniciar o banco de dados, JWT e Refresh Token, RBAC e diversos outros conceitos.",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simaomenezes/projeto03_api_node_solid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simaomenezes/projeto03_api_node_solid/issues"
+  },
+  "homepage": "https://github.com/simaomenezes/projeto03_api_node_solid#readme",
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "tsup": "^6.6.3",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "fastify": "^4.14.1"
+  }
+}
