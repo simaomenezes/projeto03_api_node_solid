@@ -10,7 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui":"vitest --ui"
+    "test:ui": "vitest --ui"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
   "dependencies": {
     "@prisma/client": "^5.0.0",
     "bcryptjs": "^2.4.3",
+    "dayjs": "^1.11.9",
     "dotenv": "^16.3.1",
     "fastify": "^4.14.1",
     "zod": "^3.21.4"
