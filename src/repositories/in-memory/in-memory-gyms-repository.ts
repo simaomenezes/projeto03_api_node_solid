@@ -1,6 +1,7 @@
 import { Gym, Prisma } from "@prisma/client";
 import { GymsRepository } from "../gyms-repository";
 import { randomUUID } from "crypto";
+import { GetResult } from "@prisma/client/runtime/library";
 
 export class InMemoryGymsRepository implements GymsRepository {
     public items: Gym[] = []
@@ -28,5 +29,10 @@ export class InMemoryGymsRepository implements GymsRepository {
         }
         
         return gym
+    }
+
+    async searchMany(query: string, page: number) {
+        return this.items.filter((item) => item.title.includes(query))
+            .slice((page - 1) * 20, page * 20)
     }
 }
