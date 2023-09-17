@@ -31,6 +31,7 @@ describe('Validate Check-in (e2e)', () => {
             data: {
                 gym_id: gym.id,
                 user_id: user.id,
+                validated_at: new Date(),
             },
         })
 
