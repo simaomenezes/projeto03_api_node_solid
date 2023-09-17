@@ -21,8 +21,6 @@ describe('Validate Check-in (e2e)', () => {
         const gym = await prisma.gym.create({
             data: {
                 title: 'my nivi tretse',
-                description: 'novo teste',
-                phone: '123321213',
                 latitude: -27.2092052,
                 longitude: -49.6401091,            
     
@@ -33,7 +31,6 @@ describe('Validate Check-in (e2e)', () => {
             data: {
                 gym_id: gym.id,
                 user_id: user.id,
-                validated_at: new Date(),
             },
         })
 
@@ -42,13 +39,14 @@ describe('Validate Check-in (e2e)', () => {
             .set('Authorization', `Bearer ${token}`)
             .send()
 
+        expect(response.statusCode).toEqual(204)
+        
         checkIn = await prisma.checkIn.findUniqueOrThrow({
             where: {
                 id: checkIn.id,
             },
         })
 
-        expect(response.statusCode).toEqual(204)
-        //expect(checkIn.validated_at).toEqual(expect.any(Date))
+        expect(checkIn.validated_at).toEqual(expect.any(Date))
     })
 })
